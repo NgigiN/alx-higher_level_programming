@@ -1,1 +1,1 @@
-Learning about if/else, loops, function
+Learning about if / else loops, function

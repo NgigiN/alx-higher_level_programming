@@ -4,11 +4,16 @@
 
 
 class square:
+    """Represents a square
+    Attributes:
+    __size (int): size of the square"""
+
     def __init__(self, size=0):
         """Initializing a square.
 
         Args:
         size (int): the size of the new square
+        Return: None
         """
 
         if not isinstance(size, int):

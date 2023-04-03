@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
-# creating my class square
+"""defining my class square"""
+
+
 class Square:
     # instantiating it with the size as private
     def __init__(self, size):

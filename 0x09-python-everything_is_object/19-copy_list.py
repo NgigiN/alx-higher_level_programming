@@ -1,3 +1,3 @@
 def copy_list(l):
     new_list = []
-    new_list = l.copy()
+    new_list = list(l)

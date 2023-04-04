@@ -12,13 +12,6 @@ usage
 	>>> say_my_name("Ken", "Martin")
 	My name is Ken Martin
 
-second name is optional and is initalised to an empty string
-
-::
-
-	>>> say_my_name("Ken")
-	My name is Ken
-
 Invalid names
 
 if first_name or last_name si not a string a TypeError is raised

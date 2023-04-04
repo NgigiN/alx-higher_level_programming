@@ -31,7 +31,7 @@ class Rectangle:
         """
         setter for the private attribute width
         """
-        if not type(value) is int:
+        if not isinstance(value, int):
             raise TypeError("width must bbe an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
@@ -49,7 +49,7 @@ class Rectangle:
         """
         setter for the private attribute height
         """
-        if not type(value) is int:
+        if not isinstance(value, int):
             raise TypeError("height must bbe an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
@@ -69,19 +69,25 @@ class Rectangle:
 
     def __str__(self):
         """
-        returns a representation of the rectangle
-        """
+        returns a printable representation of the rectangle
+         Represents the rectangle with the # character
+       """
+
+        if self.__width == 0 and self.__height == 0:
+            return ("")
+
         s = []
-        if self.__width != 0 and self.__height != 0:
-            for i in range(self.__height):
-                [s.append(str(self.print_symbol)) for j in range(self.__width)]
-                if i != self.__height - 1:
-                    s.append("\n")
+        for i in range(self.__height):
+            [s.append('#') for j in range(self.__width)]
+            if i != self.__height - 1:
+                s.append("\n")
         return ("".join(s))
 
     def __repr__(self):
         """returns a string representation"""
-        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+        shap = "Rectangle(" + str(self.__width)
+        shap += ", " + str(self.__height) + ")"
+        return shap
 
     def __del__(self):
         """

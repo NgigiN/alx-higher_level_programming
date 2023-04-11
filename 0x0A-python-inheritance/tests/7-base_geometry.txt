@@ -1,0 +1,68 @@
+This module tests the inheritance of class ``BaseGeometry``
+
+Importing
+	>>> Base = __import__("7-base_geometry").BaseGeometry
+
+checking for module docstrings:
+	>>> m = __import__("7-base_geometry").__doc__
+	>>> len(m) > 1
+	True
+
+Checking for class docstring:
+:: 
+
+	>>> c = __import__("7-base_geometry").BaseGeometry.__doc__
+	>>> len(c) > 1
+	True
+
+Checking for area failure
+::
+	>>> b = Base()
+	>>> b.area()
+	Traceback (most recent call last):
+	...
+	Exception: area() is not implemented
+
+Checking for too many arguments for area
+::
+	>>> b = Base()
+	>>> b.area(1)
+	Traceback (most recent call last):
+	...
+	TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
+
+Checking an integer == 0
+::
+	>>> b.integer_validator("integer", 0)
+	Traceback (most recent call last):
+	...
+	ValueError: integer must be greater than 0
+
+Checking for integer < 0
+::
+	>>> b.integer_validator("integer", -1)
+	Traceback (most recent call last):
+	...
+	ValueError: integer must be greater than 0
+
+Checking for no arguments
+::
+	>>> b.integer_validator()
+	Traceback (most recent call last):
+	...
+	TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Checking for only one argument
+::
+	>>> b.integer_validator("integer")
+	Traceback (most recent call last):
+	...
+	TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+Checking for too many arguments:
+::
+
+	>>> b.integer_validator("integer", 3, 4, 5)
+	Traceback (most recent call last):
+	...
+	TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 5 were given

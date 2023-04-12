@@ -9,8 +9,8 @@ if __name__ == "__main__":
         '6-load_from_json_file').load_from_json_file
 
     try:
-        list_members = load_from_json_file("add_item.json")
+        items = load_from_json_file("add_item.json")
     except FileNotFoundError:
-        list_members = []
-    list_members.extend(sys.argv[1:])
-    save_to_json_file(list_members, "add_item.json")
+        items = []
+    items.extend(sys.argv[1:])
+    save_to_json_file(items, "add_item.json")

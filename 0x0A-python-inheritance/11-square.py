@@ -11,6 +11,6 @@ class Square(Rectangle):
         self.integer_validator("size", size)
         """using the inherited methods"""
         super().__init__(size, size)
-        """By performing a super it means for this class alter the way it is initalized
-        from width, height to size, size"""
+        """By performing a super it means for this class alter
+        the way it is initalized from width, height to size, size"""
         self.__size = size

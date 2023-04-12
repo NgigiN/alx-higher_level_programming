@@ -14,9 +14,12 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
     def area(self):
-        """Method to find the area of the rectangle belonging to this class(Rectangle)"""
+        """Method to find the area of the rectangle belonging
+        to this class(Rectangle)"""
         return self.__width * self.__height
 
     def __str__(self):
         """returns the print() and str() representation of a rectangle"""
-        return ("[{}] {}/{}".format(str(self.__class__.__name__), self.__width, self.__height))
+        string = "[" + str(self.__class__.__name__) + "] "
+        string += str(slef.__width) + "/" + str(self.__height)
+        return string

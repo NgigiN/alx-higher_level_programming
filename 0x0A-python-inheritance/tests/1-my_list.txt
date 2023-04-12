@@ -2,7 +2,7 @@ This module tests an inherited sorted function ``print_sorted``
 
 Usage
 
-``print_sorted() 
+``print_sorted()
 Args: list of integers to be sorted``
 
 ::
@@ -35,3 +35,15 @@ Args: list of integers to be sorted``
 	[-6, -5, 0, 9]
 	>>>
 
+::
+	>>> b = []
+	>>> my_list = MyList(b)
+	>>> my_list.print_sorted()
+	[]
+	>>>
+
+::
+	>>> type(my_list.print_sorted())
+	[]
+	<class 'NoneType'>
+	>>>

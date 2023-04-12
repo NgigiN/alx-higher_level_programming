@@ -35,6 +35,7 @@ Args: list of integers to be sorted``
 	[-6, -5, 0, 9]
 	>>>
 
+an empty list
 ::
 	>>> b = []
 	>>> my_list = MyList(b)
@@ -46,4 +47,12 @@ Args: list of integers to be sorted``
 	>>> type(my_list.print_sorted())
 	[]
 	<class 'NoneType'>
+	>>>
+
+::
+	>>> my_list = MyList([3, 1, 2])
+	>>> new_list = my_list.print_sorted()
+	[1, 2, 3]
+	>>> isinstance(new_list, list)
+	False
 	>>>

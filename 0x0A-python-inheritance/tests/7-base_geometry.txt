@@ -9,7 +9,7 @@ checking for module docstrings:
 	True
 
 Checking for class docstring:
-:: 
+::
 
 	>>> c = __import__("7-base_geometry").BaseGeometry.__doc__
 	>>> len(c) > 1
@@ -31,18 +31,16 @@ Checking for too many arguments for area
 	...
 	TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
 
-Checking an integer == 0
-::
+Checking for integer == 0:
 	>>> b.integer_validator("integer", 0)
 	Traceback (most recent call last):
-	...
-	ValueError: integer must be greater than 0
+        ...
+        ValueError: integer must be greater than 0
 
-Checking for integer < 0
-::
-	>>> b.integer_validator("integer", -1)
+Checking for integer < 0;
+	>>> b.integer_validator("integer", -5)
 	Traceback (most recent call last):
-	...
+        ...
 	ValueError: integer must be greater than 0
 
 Checking for no arguments

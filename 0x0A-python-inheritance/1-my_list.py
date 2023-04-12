@@ -11,10 +11,6 @@ class MyList(list):
 
     def print_sorted(self):
         """
-        This is a function of priting sorted integer values passed into the class
-        Args:
-        integers passed
-
+        This is a function of printing sorted integer values
         """
-
         print(sorted(self))

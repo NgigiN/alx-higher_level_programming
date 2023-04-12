@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+"""This is python class to JSON function"""
+
 
 def class_to_json(obj):
-    for attr, value in obj.__dict__.items():
-        if isintance(value, (list, dict, str, int, bool)):
-            json_dict[attr] = value
-    return json_dict
+    """Returns the dictionary representation of a data structure"""
+    return obj.__dict__

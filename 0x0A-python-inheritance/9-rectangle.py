@@ -8,6 +8,7 @@ class Rectangle(BaseGeometry):
 
     def __init__(self, width, height):
         """Initializing a new recatangle with width and height"""
+        super().__init__()
         self.integer_validator("width", width)
         self.__width = width
         self.integer_validator("height", height)
@@ -21,5 +22,5 @@ class Rectangle(BaseGeometry):
     def __str__(self):
         """returns the print() and str() representation of a rectangle"""
         string = "[" + str(self.__class__.__name__) + "] "
-        string += str(slef.__width) + "/" + str(self.__height)
+        string += str(self.__width) + "/" + str(self.__height)
         return string

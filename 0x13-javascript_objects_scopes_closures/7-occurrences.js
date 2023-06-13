@@ -1,7 +1,6 @@
 #!/usr/bin/node
 
 exports.nbOccurences = function (list, searchElement) {
-
   let i = 0;
   let count = 0;
   while (i < list.length) {
@@ -11,4 +10,4 @@ exports.nbOccurences = function (list, searchElement) {
     i++;
   }
   return count;
-}
+};

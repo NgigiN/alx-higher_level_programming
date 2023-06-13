@@ -1,10 +1,10 @@
 #!/usr/bin/node
 
 function add (arg1, arg2) {
-	if ((arg1 === undefined) || (arg 2 === undefined)) {
+	if ((arg1 === undefined) || (arg2 === undefined)) {
 		console.log(`Nan`);
 	} else {
-		console.log(arg1 + arg2);
+		console.log(parseInt(arg1) + parseInt(arg2));
 	}
 }
 

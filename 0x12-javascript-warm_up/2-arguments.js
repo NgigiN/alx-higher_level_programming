@@ -1,9 +1,10 @@
 #!/usr/bin/node
-const { argv } = require('node:process');
 
-if (argv.length <= 2) {
+const slicedArgs = process.argv.slice(2);
+
+if (slicedArgs.length === 0) {
   console.log('No argument');
-} else if (argv.length === 3) {
+} else if (argv.length === 1) {
   console.log('Argument found');
 } else {
   console.log('Arguments found');

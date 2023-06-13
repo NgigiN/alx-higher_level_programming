@@ -1,15 +1,15 @@
 #!/usr/bin/node
 
-const i = 0;
-const j = 0;
-if (Number(process.argv[2]) === parseInt(process.argv[2])) {
-  while (i < process.argv[2]) {
-    while (j < process.argv[2]) {
-      console.log('X');
-      j++;
-    }
-    i++;
-  }
-} else {
+const sliceArgs = process.argv.slice(2);
+
+if ((sliceArgs.length !== 1) || (isNaN(parseInt(sliceArgs[0])))) {
   console.log('Missing size');
+} else {
+  for (let i = 0; i < sliceArgs[0]; i++) {
+    let square = '';
+    for (let j = 0; j < sliceArgs[0]; j++) {
+      square += 'X';
+    }
+    console.log(square);
+  }
 }

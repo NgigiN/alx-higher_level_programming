@@ -1,10 +1,8 @@
 #!/usr/bin/node
-// const { argv } = require('node:process');
+const myVar = process.argv.slice(2);
 
-if (process.argv.length >= 3) {
-  if (Number(process.argv[2]) === parseFloat(process.argv[2])) {
-    console.log(`My number: ${process.argv[2]}`);
-  } else {
-    console.log('Not a number');
-  }
+if (isNaN(myVar[0])) {
+  console.log('Not a number');
+} else {
+  console.log('My number: ' + myVar[0]);
 }

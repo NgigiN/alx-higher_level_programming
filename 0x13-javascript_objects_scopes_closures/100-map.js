@@ -6,7 +6,7 @@ let i = -1;
 
 const map1 = list1.map(multiply);
 
-function multiply(element) {
+function multiply (element) {
   i++;
   return element * i;
 }

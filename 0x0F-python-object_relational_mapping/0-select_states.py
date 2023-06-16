@@ -20,7 +20,7 @@ def list_states(username, password, database):
 
     # iterate over the results and print each state
     for row in results:
-        print('{} ({})'.format(row[1], row[0]))
+        print('({}, \'{}\')'.format(row[0], row[1]))
 
     cursor.close()
     connection.close()

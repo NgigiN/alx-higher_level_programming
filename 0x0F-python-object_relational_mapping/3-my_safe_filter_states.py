@@ -27,7 +27,7 @@ def list_states_arg(username, password, database):
     """connect  to the MySQL server"""
     cursor.execute(
         "SELECT * FROM states WHERE name LIKE \
-                    BINARY %(name)s ORDER BY states.id ASC", {'name': sys.argv[4]})
+                    BINARY %(name)s ORDER BY states.id ASC", {'name': state_name})
 
     results = cursor.fetchall()
 

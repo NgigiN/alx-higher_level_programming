@@ -29,3 +29,6 @@ results = cursor.fetchall()
 
 for row in results:
     print(row)
+
+cursor.close()
+connection.close()

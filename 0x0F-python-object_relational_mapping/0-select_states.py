@@ -12,9 +12,9 @@ def list_states(username, password, database):
     connection = MySQLdb.connect(
         host='localhost',
         port=3306,
-        user='root',
-        passwd='1234',
-        db='hbtn_0e_0_usa'
+        user=username,
+        passwd=password,
+        db=database
     )
     cursor = connection.cursor()
     """query the database for all states"""
@@ -24,7 +24,7 @@ def list_states(username, password, database):
 
     """iterate over the results and print each state"""
     for row in results:
-        print('({}, \'{}\')'.format(row[0], row[1]))
+        print(row)
 
     cursor.close()
     connection.close()

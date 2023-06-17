@@ -20,7 +20,8 @@ def list_states_N(username, password, database):
     cursor = connection.cursor()
     """connect  to the MySQL server"""
     cursor.execute(
-        'SELECT * FROM states WHERE name LIKE BINARY "N%" ORDER BY states.id ASC')
+        'SELECT * FROM states WHERE name LIKE BINARY "N%" \
+            ORDER BY states.id ASC')
 
     results = cursor.fetchall()
 

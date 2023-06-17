@@ -12,8 +12,9 @@ def list_states_N(username, password, database):
     connection = MySQLdb.connect(
         host='localhost',
         port=3306,
-        user='root',
-        db='hbtn_0e_0_usa'
+        user=username,
+        passwd=password,
+        db=database
     )
 
     cursor = connection.cursor()
@@ -23,7 +24,7 @@ def list_states_N(username, password, database):
     results = cursor.fetchall()
 
     for row in results:
-        print('({}, \'{}\')'.format(row[0], row[1]))
+        print(row)
 
     cursor.close()
     connection.close()

@@ -13,7 +13,7 @@ import MySQLdb
 import sys
 
 
-def list_states_arg(username, password, database):
+def list_states_arg(username, password, database, state_name):
     """connection to MySQL server"""
     connection = MySQLdb.connect(
         host='localhost',
@@ -45,4 +45,4 @@ if __name__ == '__main__':
     database = sys.argv[3]
     state_name = sys.argv[4]
 
-    list_states_arg(username, password, database)
+    list_states_arg(username, password, database, state_name)

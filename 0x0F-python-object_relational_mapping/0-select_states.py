@@ -28,8 +28,9 @@ def list_states(username, password, database):
 
 if __name__ == '__main__':
     # Gets arguments from the command line
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    # List all states
-    list_states(username, password, database)
+    if len(sys.argv) == 4:
+        username = sys.argv[1]
+        password = sys.argv[2]
+        database = sys.argv[3]
+        # List all states
+        list_states(username, password, database)

@@ -19,11 +19,11 @@ if __name__ == '__main__':
     with connection.cursor() as cursor:
         cursor.execute(
             "SELECT cities.id, cities.name, states.name \
-        FROM cities JOIN states ON cities.state_id = states.id \
-        ORDER BY cities.id ASC")
+            FROM cities JOIN states ON cities.state_id = states.id \
+            ORDER BY cities.id ASC")
 
-    results = cursor.fetchall()
+        results = cursor.fetchall()
 
-    if results is not None:
-        for row in results:
-            print(row)
+        if results is not None:
+            for row in results:
+                print(row)

@@ -34,7 +34,7 @@ if __name__ == '__main__':
             'state_name': sys.argv[4]
         })
 
-    results = cursor.fetchall()
+        results = cursor.fetchall()
 
     if results is not None:
         print(", ".join([row[1] for row in results]))

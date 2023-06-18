@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-
 """
-The script that prints the State object with
-the name passed as an argument from the database
+This script deletes all States
+with the letter `a`
+from the database.
 """
 
 from sys import argv
@@ -10,9 +10,9 @@ from model_state import State, Base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     """
-    Access the Database
+    Deletes States on the database.
     """
 
     db_url = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
@@ -23,9 +23,12 @@ if __name__ == '__main__':
 
     session = Session()
 
-    state = session.query(State).filter(State.name == argv[4]).first()
+    states = session.query(State).filter(State.name.contains('a'))
 
-    if state is not None:
-        print('{0}'.format(state.id))
-    else:
-        print("Not found")
+    if states is not None:
+        for state in states:
+            session.delete(state)
+
+    session.commit()
+
+    session.close()

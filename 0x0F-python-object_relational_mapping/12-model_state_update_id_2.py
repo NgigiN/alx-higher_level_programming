@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 """
-The script that prints the State object with
-the name passed as an argument from the database
+This script prints the first State object
+from the data base hbtn_0e_6_usa
 """
 
 from sys import argv
@@ -23,9 +23,9 @@ if __name__ == '__main__':
 
     session = Session()
 
-    state = session.query(State).filter(State.name == argv[4]).first()
+    state = session.query(State).filter(State.id == 2).first()
 
-    if state is not None:
-        print('{0}'.format(state.id))
-    else:
-        print("Not found")
+    state.name = "New Mexico"
+    session.commit()
+
+    session.close()

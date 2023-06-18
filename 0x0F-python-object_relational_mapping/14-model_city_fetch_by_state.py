@@ -1,18 +1,18 @@
 #!/usr/bin/python3
-
 """
-The script that prints the State object with
-the name passed as an argument from the database
+This script prints all City objects
+from the database
 """
 
 from sys import argv
 from model_state import State, Base
+from model_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-
 if __name__ == '__main__':
     """
-    Access the Database
+    Access to the database and get cities
+    from the database
     """
 
     db_url = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
@@ -23,9 +23,10 @@ if __name__ == '__main__':
 
     session = Session()
 
-    state = session.query(State).filter(State.name == argv[4]).first()
+    results = session.query(City, State).join(State)
 
-    if state is not None:
-        print('{0}'.format(state.id))
-    else:
-        print("Not found")
+    for city, state in results.all():
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
+
+    session.commit()
+    session.close()

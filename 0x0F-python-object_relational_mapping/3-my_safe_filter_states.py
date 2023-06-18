@@ -1,12 +1,8 @@
-
 #!/usr/bin/python3
 """
-This script takes in an argument and
-displays all values in the states
+This script displays all values in the states
 where `name` matches the argument
 from the database `hbtn_0e_0_usa`.
-This time the script is safe from
-MySQL injections!
 """
 
 import MySQLdb
@@ -28,7 +24,8 @@ def list_states_arg(username, password, database, state_name):
 
     cursor.execute(
         "SELECT * FROM states WHERE name LIKE \
-                    BINARY %(name)s ORDER BY states.id ASC", {'name': sys.argv[4]})
+                    BINARY %(name)s ORDER BY states.id ASC",
+        {'name': sys.argv[4]})
 
     results = cursor.fetchall()
 

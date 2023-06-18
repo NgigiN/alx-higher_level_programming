@@ -10,7 +10,11 @@ if __name__ == '__main__':
     "Access the database and get cities"
 
     connection = MySQLdb.connect(
-        host="localhost", port=3306, user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+        host="localhost",
+        port=3306,
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3])
 
     with connection.cursor() as cursor:
         cursor.execute("""

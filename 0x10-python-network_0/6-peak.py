@@ -29,6 +29,6 @@ def find_peak(list_of_integers):
 
     if list_of_integers[mid_index] == list_of_integers[mid_index + 1] and \
         list_of_integers[mid_index] == list_of_integers[mid_index - 1]:
-      return list_of_integers[mid_index]
+        return list_of_integers[mid_index]
 
     return None

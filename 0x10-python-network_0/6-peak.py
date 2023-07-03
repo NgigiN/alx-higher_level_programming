@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Peak finding algorithm """
 
+
 def find_peak(list_of_integers):
     """finds a peak in a list of integers
     Args:
@@ -15,20 +16,22 @@ def find_peak(list_of_integers):
 
     if list_of_integers[mid_index - 1] < list_of_integers[mid_index] and \
             list_of_integers[mid_index + 1] < list_of_integers[mid_index]:
-                return mid_index
+        return mid_index
 
     if list_of_integers[mid_index - 1] > list_of_integers[mid_index]:
         for i in range(mid_index - 1, -1, -1):
-            if list_of_integers[i] > list_of_integers[mid_index] and list_of_integers[i] != list_of_integers[mid_index]:
+            if list_of_integers[i] > list_of_integers[mid_index] and \
+                    list_of_integers[i] != list_of_integers[mid_index]:
                 return list_of_integers[i]
 
     else:
         for i in range(mid_index + 1, len(list_of_integers)):
-            if list_of_integers[i] > list_of_integers[mid_index] and list_of_integers[i] != list_of_integers[mid_index]:
+            if list_of_integers[i] > list_of_integers[mid_index] and \
+                    list_of_integers[i] != list_of_integers[mid_index]:
                 return list_of_integers[i]
 
     if list_of_integers[mid_index] == list_of_integers[mid_index + 1] and \
-        list_of_integers[mid_index] == list_of_integers[mid_index - 1]:
+            list_of_integers[mid_index] == list_of_integers[mid_index - 1]:
         return list_of_integers[mid_index]
 
     return None

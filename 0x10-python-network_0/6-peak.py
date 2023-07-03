@@ -12,26 +12,21 @@ def find_peak(list_of_integers):
     if len(list_of_integers) <= 1:
         return None
 
-    mid_index = len(list_of_integers) // 2
+    list_len = len(list_of_integers)
 
-    if list_of_integers[mid_index - 1] < list_of_integers[mid_index] and \
-            list_of_integers[mid_index + 1] < list_of_integers[mid_index]:
-        return mid_index
+    if list_len == 1:
+        return list_of_integers[0]
+    elif list_len == 2:
+        return max(list_of_integers)
 
-    if list_of_integers[mid_index - 1] > list_of_integers[mid_index]:
-        for i in range(mid_index - 1, -1, -1):
-            if list_of_integers[i] > list_of_integers[mid_index] and \
-                    list_of_integers[i] != list_of_integers[mid_index]:
-                return list_of_integers[i]
+    mid = list_len // 2
 
+    peak = list_of_integers[mid]
+
+    if peak > list_of_integers[mid - 1] and peak > list_of_integers[mid + 1]:
+        return peak
+
+    elif peak < list_of_integers[mid - 1]:
+        return find_peak(list_of_integers[:mid])
     else:
-        for i in range(mid_index + 1, len(list_of_integers)):
-            if list_of_integers[i] > list_of_integers[mid_index] and \
-                    list_of_integers[i] != list_of_integers[mid_index]:
-                return list_of_integers[i]
-
-    if list_of_integers[mid_index] == list_of_integers[mid_index + 1] and \
-            list_of_integers[mid_index] == list_of_integers[mid_index - 1]:
-        return list_of_integers[mid_index]
-
-    return None
+        return find_peak(list_of_integers[mid + 1:])

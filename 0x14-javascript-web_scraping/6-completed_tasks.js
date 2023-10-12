@@ -10,12 +10,12 @@ request(url, function (err, response, body) {
   } else {
     const dict = {};
     const tasks = JSON.parse(body);
-    for (const i of tasks) {
-      if (i.completed === true) {
-        if (i.userId in dict) {
+    for (const task of tasks) {
+      if (task.completed === true) {
+        if (task.userId in dict) {
           dict[i.userID] += 1;
         } else {
-          diect[task.userId] = 1;
+          dict[task.userId] = 1;
         }
       }
     }

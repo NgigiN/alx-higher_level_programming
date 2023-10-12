@@ -7,20 +7,18 @@ const request = require('request');
 request(url, function (err, response, body) {
   if (err) {
     console.log(err);
-  } else if (response.statusCode === 200) {
+  } else {
     const dict = {};
     const tasks = JSON.parse(body);
-    for (const i in tasks) {
-      if (tasks[i].completed) {
-        if (dict[tasks[i].userId] === undefined) {
-          dict[tasks[i].userId] = 1;
+    for (const i of tasks) {
+      if (i.completed === true) {
+        if (i.userId in dict) {
+          dict[i.userID] += 1;
         } else {
-          dict[tasks[i].userId]++;
+          diect[task.userId] = 1;
         }
       }
     }
     console.log(dict);
-  } else {
-    console.log('Error code: ' + response.statusCode);
   }
 });

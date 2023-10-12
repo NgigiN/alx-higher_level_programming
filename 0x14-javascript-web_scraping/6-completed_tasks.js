@@ -13,7 +13,7 @@ request(url, function (err, response, body) {
     for (const task of tasks) {
       if (task.completed === true) {
         if (task.userId in dict) {
-          dict[i.userID] += 1;
+          dict[task.userID] += 1;
         } else {
           dict[task.userId] = 1;
         }
